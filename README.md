@@ -25,7 +25,7 @@ The system demonstrated significant efficiency improvements compared to manual p
 - **Scalability:** Successfully handled 68 concurrent DDoS alerts within 15 seconds.
 
 ## 🏗 System Architecture
-**![System Architecture](./assets/architecture.png)
+![System Architecture](./assets/architecture.png)
 
 ## 📝 Setup & Installation
 1. **Splunk:** Configure `inputs.conf` to forward logs to the indexer.
