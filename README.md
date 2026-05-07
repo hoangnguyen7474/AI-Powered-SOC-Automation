@@ -18,7 +18,22 @@ This project focuses on building an automated Security Operations Center (SOC) s
 - **Monitoring:** Windows Event Logs, Sysmon
 - **Testing Tools:** Kali Linux (Hydra, Villain, hping3)
 
-## 🧠 Custom Logic & Data Normalization
+
+## 📊 Performance Results
+The system demonstrated significant efficiency improvements compared to manual processes:
+- **MTTR (Mean Time To Respond):** Reduced from ~15 minutes to **9.3 seconds**.
+- **Detection Accuracy:** Achieved **99.7%** accuracy on the CIC-IDS-2017 dataset.
+- **Scalability:** Successfully handled 68 concurrent DDoS alerts within 15 seconds.
+
+## 🏗 System Architecture
+![System Architecture](./assets/architecture.png)
+
+
+## 🏗 n8n Workflow
+[n8n Workflow](./assets/n8n-workflow.png)
+
+
+## 🧠 Custom Logic & Data Normalization in n8n
 To ensure the AI and the security team receive clean, structured data, I implemented a custom JavaScript processor within n8n.
 
 Key functions of the script:
@@ -29,16 +44,11 @@ Dynamic Routing: Automatically routes alerts to specific Slack channels based on
 
 Context Enrichment: Prepares raw data for the LLM (GPT-4o) to analyze.
 
+📂[ Function Node ](./assets/n8n-workflow-%20Custom%20Logic%20Data%20Normalization.png)
+
 📂[ View the full script here ](./scripts/data-normalization.js)
 
-## 📊 Performance Results
-The system demonstrated significant efficiency improvements compared to manual processes:
-- **MTTR (Mean Time To Respond):** Reduced from ~15 minutes to **9.3 seconds**.
-- **Detection Accuracy:** Achieved **99.7%** accuracy on the CIC-IDS-2017 dataset.
-- **Scalability:** Successfully handled 68 concurrent DDoS alerts within 15 seconds.
 
-## 🏗 System Architecture
-![System Architecture](./assets/architecture.png)
 
 ## 📝 Setup & Installation
 1. **Splunk:** Configure `inputs.conf` to forward logs to the indexer.
