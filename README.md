@@ -18,6 +18,19 @@ This project focuses on building an automated Security Operations Center (SOC) s
 - **Monitoring:** Windows Event Logs, Sysmon
 - **Testing Tools:** Kali Linux (Hydra, Villain, hping3)
 
+## 🧠 Custom Logic & Data Normalization
+To ensure the AI and the security team receive clean, structured data, I implemented a custom JavaScript processor within n8n.
+
+Key functions of the script:
+
+Data Normalization: Standardizes field names (IP, Hostname, Severity) from different log sources.
+
+Dynamic Routing: Automatically routes alerts to specific Slack channels based on the Alert ID (e.g., #alert-brute-force, #alert-ddos).
+
+Context Enrichment: Prepares raw data for the LLM (GPT-4o) to analyze.
+
+📂![ View the full script here ](./scripts/data-normalization.js)
+
 ## 📊 Performance Results
 The system demonstrated significant efficiency improvements compared to manual processes:
 - **MTTR (Mean Time To Respond):** Reduced from ~15 minutes to **9.3 seconds**.
