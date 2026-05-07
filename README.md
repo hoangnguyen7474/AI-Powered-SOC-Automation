@@ -97,7 +97,6 @@ REASONING: Explain clearly why you chose or adjusted the severity level based on
     * Response: Block source IPs, implement disaster recovery plan.
 - For CIC-IDS (based on ATTACK_TYPE): Use general MITRE mitigations (e.g., for DoS simulations, same as T1498), but keep informational with no urgent actions.
 
-Format output clearly in Markdown for Slack."
 ----------------------------------------------
 **User Role (The Dynamic Data Input):**
 
