@@ -98,8 +98,9 @@ REASONING: Explain clearly why you chose or adjusted the severity level based on
 - For CIC-IDS (based on ATTACK_TYPE): Use general MITRE mitigations (e.g., for DoS simulations, same as T1498), but keep informational with no urgent actions.
 
 Format output clearly in Markdown for Slack."
-
+----------------------------------------------
 **User Role (The Dynamic Data Input):**
+
 Alert: {{ $json.search_name }}
 Type: {{ $json.attack_type }}{% if $json.attack_type_cic != 'N/A' %} (CIC-IDS: {{ $json.attack_type_cic }}){% endif %}
 Initial Severity: {{ $json.severity }}
@@ -113,6 +114,8 @@ Key Details:
 {% if $json.message != 'N/A' %}PowerShell Script/Message (Malware): {{ $json.message }}{% endif %}
 Raw Log for Reference: {{ $json.raw_details }}
 Slack Channel Name: {{ $json.channel_name }}
+
+----------------------------------------------
 
 
 ## 📁 Repository Structure & Components
