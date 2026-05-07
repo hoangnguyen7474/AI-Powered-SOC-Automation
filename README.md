@@ -44,7 +44,7 @@ Dynamic Routing: Automatically routes alerts to specific Slack channels based on
 
 Context Enrichment: Prepares raw data for the LLM (GPT-4o) to analyze.
 
-📂[ Function Node ](./assets/n8n-workflow-%20Custom%20Logic%20Data%20Normalization.png)
+📂[ Function Node ](./assets/n8n-workflow- Custom Logic Data Normalization.png)
 
 📂[ View the full script here ](./scripts/data-normalization.js)
 
