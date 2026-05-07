@@ -30,7 +30,7 @@ The system demonstrated significant efficiency improvements compared to manual p
 
 
 ## 🏗 n8n Workflow
-[n8n Workflow](./assets/n8n-workflow.png)
+![n8n Workflow](./assets/n8n-workflow.png)
 
 
 ## 🧠 Custom Logic & Data Normalization in n8n
@@ -44,7 +44,7 @@ Dynamic Routing: Automatically routes alerts to specific Slack channels based on
 
 Context Enrichment: Prepares raw data for the LLM (GPT-4o) to analyze.
 
-📂[ Function Node ](./assets/n8n-workflow-CustomLogicDataNormalization.png)
+![ Function Node ](./assets/n8n-workflow-CustomLogicDataNormalization.png)
 
 📂[ View the full script here ](./scripts/data-normalization.js)
 
