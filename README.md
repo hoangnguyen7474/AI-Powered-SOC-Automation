@@ -29,7 +29,13 @@ The system demonstrated significant efficiency improvements compared to manual p
 ![System Architecture](./assets/architecture.png)
 
 
-## 🏗 n8n Workflow
+## 🏗  System Workflow
+1.  **Ingestion:** Splunk collects logs from Endpoints (Windows/Sysmon).
+2.  **Detection:** Alert rules in Splunk trigger a Webhook when suspicious activity is detected.
+3.  **Normalization:** The `data-normalization.js` script inside n8n cleans and formats the raw alert data.
+4.  **AI Analysis:** GPT-4o analyzes the normalized data to determine the threat level and provide remediation steps.
+5.  **Notification:** A structured, high-context alert is sent to a specific Slack channel based on the attack type.
+
 ![n8n Workflow](./assets/n8n-workflow.png)
 
 
@@ -47,6 +53,41 @@ Context Enrichment: Prepares raw data for the LLM (GPT-4o) to analyze.
 ![ Function Node ](./assets/n8n-workflow-CustomLogicDataNormalization.png)
 
 📂[ View the full script here ](./scripts/data-normalization.js)
+
+## 📁 Repository Structure & Components
+
+I have organized this repository to reflect a professional SecOps environment. Below is the breakdown of each directory and its function:
+
+### 📂 assets/
+Contains visual documentation of the project’s monitoring and alerting capabilities.
+* `architecture.png`: High-level diagram showing the data flow between Splunk, n8n, and OpenAI.
+* `splunk-dashboard-alerts.png`: **Main Security Dashboard** providing an overview of all detected security events and system health.
+* `splunk-dashboard-alerts01.png`: **Brute Force Detection View** showing failed login attempts (Windows Event ID 4625) captured from the victim's machine.
+* `splunk-dashboard-alerts02.jpg`: **Malware Activity Monitoring** visualizing suspicious PowerShell execution and unauthorized file modifications.
+* `splunk-dashboard-alerts03.png`: **DDoS Attack Analysis** illustrating traffic spikes and SYN flood patterns detected in real-time.
+* `splunk-dashboard-alerts04.jpg`: **CIC-IDS-2017 Dataset Integration** showing the validation of the AI model against international standard datasets.
+* `slack-alert.png`: **AI-Generated Incident Report** - a sample of the high-context notification sent to Slack via n8n.
+
+### 📂 `deployments/`
+Infrastructure-as-Code (IaC) for system deployment.
+* `docker-compose.yaml`: Orchestration file to quickly spin up the n8n automation engine and its environment.
+
+### 📂 `siem-configs/`
+Configuration files for the SIEM layer (Splunk).
+* `inputs.conf`: Defines data ingestion rules for Windows Event Logs and attack simulation datasets. Locate at Victim Machine: mục C:\Program Files\SplunkUniversalForwarder\etc\system\local 
+
+### 📂 `scripts/`
+Custom scripts for logic processing and security testing.
+* `n8n-logic/data-normalization.js`: Custom JavaScript used inside n8n to standardize incoming log data before AI analysis.
+* `ingest_samples.py`: Python script to feed test data (CIC-IDS-2017) into the SIEM.
+* `auto_attack.sh`: Bash script to simulate Brute Force and DDoS attacks for testing.
+
+### 📂 `docs/`
+* `Thesis_Summary.pdf`: A detailed summary of the research methodology, experimental results, and conclusion.
+
+---
+
+
 
 
 
